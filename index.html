@@ -2142,12 +2142,12 @@
             const oldIframe = document.getElementById('lightbox-iframe');
             if (oldIframe) oldIframe.remove();
 
-            if (isVideoUrl(project.img)) {
+            if (isVideoUrl(project.src || project.img)) {
                 imgWrap.classList.add('hidden');
                 videoWrap.classList.remove('hidden');
 
-                const ytUrl = getYoutubeEmbedUrl(project.img);
-                const vimeoUrl = getVimeoEmbedUrl(project.img);
+                const ytUrl = getYoutubeEmbedUrl(project.src || project.img);
+                const vimeoUrl = getVimeoEmbedUrl(project.src || project.img);
 
                 if (ytUrl || vimeoUrl) {
                     // Embed iframe for YouTube/Vimeo
