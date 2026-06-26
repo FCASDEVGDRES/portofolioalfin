@@ -1751,7 +1751,7 @@
 
                 <!-- Social Card Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto pt-6">
-                    <a id="link-ig" href="#" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
+                    <a id="link-ig" href="zet.limitles" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
                         <span class="text-3xl text-white group-hover:text-brandNeon transition-colors"><i class="fa-brands fa-instagram"></i></span>
                         <div>
                             <span class="block text-white font-bold uppercase text-xs tracking-widest">INSTAGRAM</span>
@@ -1759,7 +1759,7 @@
                         </div>
                     </a>
 
-                    <a id="link-tt" href="#" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
+                    <a id="link-tt" href="zz_zzz999" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
                         <span class="text-3xl text-white group-hover:text-brandNeon transition-colors"><i class="fa-brands fa-tiktok"></i></span>
                         <div>
                             <span class="block text-white font-bold uppercase text-xs tracking-widest">TIKTOK</span>
@@ -1767,7 +1767,7 @@
                         </div>
                     </a>
 
-                    <a id="link-wa" href="https://wa.me/6281234567890" target="_blank" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
+                    <a id="link-wa" href="https://wa.me/6287741677918" target="_blank" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
                         <span class="text-3xl text-white group-hover:text-brandNeon transition-colors"><i class="fa-brands fa-whatsapp"></i></span>
                         <div>
                             <span class="block text-white font-bold uppercase text-xs tracking-widest">WHATSAPP</span>
@@ -1775,7 +1775,7 @@
                         </div>
                     </a>
 
-                    <a id="link-mail" href="mailto:rebel@kulture.com" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
+                    <a id="link-mail" href="mailto:alfinnganjuk7@gmail.com" class="group p-6 bg-brandGray border border-white/10 hover:border-brandNeon hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-4">
                         <span class="text-3xl text-white group-hover:text-brandNeon transition-colors"><i class="fa-solid fa-envelope"></i></span>
                         <div>
                             <span class="block text-white font-bold uppercase text-xs tracking-widest">EMAIL Direct</span>
@@ -1976,7 +1976,7 @@
                 card.setAttribute('ondragend', `handleDragEnd(event)`);
 
                 // Notice: 'h-auto w-full block' ensures the image is NEVER cropped and scales naturally!
-                const isVid = isVideoUrl(project.img);
+                const isVid = isVideoUrl(project.src || project.img);
                 const ytThumb = (() => {
                     if (!isVid) return null;
                     const ytMatch = project.img.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
@@ -2104,8 +2104,9 @@
         }
 
         function getYoutubeEmbedUrl(url) {
+            if (!url) return null;
+            const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&\s?]+)/);
             let videoId = null;
-            const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
             if (ytMatch) videoId = ytMatch[1];
             if (videoId) return `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`;
             return null;
