@@ -2165,7 +2165,7 @@
                     // Native video player
                     video.classList.remove('hidden');
                     document.getElementById('video-controls').classList.remove('hidden');
-                    video.src = project.img;
+                    video.src = project.src || project.img;
                     video.load();
                     video.play().catch(()=>{});
                     document.getElementById('video-play-icon').className = 'fa-solid fa-pause';
